@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 : QDialog(parent)
 {
     setWindowFlags(windowFlags() &~Qt::WindowContextHelpButtonHint | Qt::WindowMaximizeButtonHint | Qt::WindowMinimizeButtonHint);
-    setMinimumSize(600, 500);
+    setMinimumSize(800, 600);
 
     mpMethodBox = new QComboBox(this);
     mpUrlEdit = new QTextEdit(this);
@@ -73,6 +73,11 @@ void MainWindow::OnSumit()
     mpSubmitBtn->setEnabled(false);
     QNetworkRequest req;
     req.setUrl(mpUrlEdit->toPlainText());
+
+    QList<QNetworkReply::RawHeaderPair> headers = mpReqHeaderWidget->GetHeaders();
+    for (int i = 0; i < headers.size(); i++) {
+        req.setRawHeader(headers[i].first, headers[i].second);
+    }
 
     if (mpMethodBox->currentText() == "GET") 
     {
