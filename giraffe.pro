@@ -19,13 +19,22 @@ release {
 INCLUDEPATH += .
 
 HEADERS        =    src/global.h \
-                    src/KMainWindow.h \
+                    src/MainWindow.h \
+                    src/ReqBodyWidget.h \
+                    src/ReqCookieWidget.h \
+                    src/ReqHeaderWidget.h \
+                    src/RespBodyWidget.h \
+                    src/RespCookieWidget.h \
+                    src/RespHeaderWidget.h \
                
-               
-                
                 
 SOURCES         =   src/main.cpp \
-                    src/KMainWindow.cpp \
-                 
+                    src/MainWindow.cpp \
+                    src/ReqBodyWidget.cpp \
+                    src/ReqCookieWidget.cpp \
+                    src/ReqHeaderWidget.cpp \
+                    src/RespBodyWidget.cpp \
+                    src/RespCookieWidget.cpp \
+                    src/RespHeaderWidget.cpp \
                 
 

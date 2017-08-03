@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "KMainWindow.h"
+#include "MainWindow.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    KMainWindow window;
+    MainWindow window;
     window.show();
     return app.exec();
 }
